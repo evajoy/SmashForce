@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Displays information about the characters moves</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Categories__c</fullName>
+        <externalId>false</externalId>
+        <label>Categories</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Normal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Smash Attacks</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Grabs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Throws</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Aerial</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Special</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Character__c</fullName>
+        <description>Defines the relationship between characters and moves</description>
+        <externalId>false</externalId>
+        <label>Character</label>
+        <referenceTo>Character__c</referenceTo>
+        <relationshipLabel>Moves</relationshipLabel>
+        <relationshipName>Moves</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Damage__c</fullName>
+        <description>Displays the damage applied by the move</description>
+        <externalId>false</externalId>
+        <label>Damage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>First_Active_Frame__c</fullName>
+        <externalId>false</externalId>
+        <label>First Active Frame</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Move_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Move Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Categories__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Jab</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Dash Attack</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Forward Tilt</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Up Tilt</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Down Tilt</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Forward Smash</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Up Smash</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Down Smash</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Standing Grab</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Dash Grab</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pivot Grab</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Forward Throw</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Back Throw</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Up Throw</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Down Throw</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Neutral Air</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Forward Air</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Back Air</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Up Air</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Down Air</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Neutral Special</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Side Special</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Up Special</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Down Special</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Normal</controllingFieldValue>
+                <valueName>Jab</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Normal</controllingFieldValue>
+                <valueName>Dash Attack</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Normal</controllingFieldValue>
+                <valueName>Forward Tilt</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Normal</controllingFieldValue>
+                <valueName>Up Tilt</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Normal</controllingFieldValue>
+                <valueName>Down Tilt</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Smash Attacks</controllingFieldValue>
+                <valueName>Forward Smash</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Smash Attacks</controllingFieldValue>
+                <valueName>Up Smash</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Smash Attacks</controllingFieldValue>
+                <valueName>Down Smash</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Grabs</controllingFieldValue>
+                <valueName>Standing Grab</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Grabs</controllingFieldValue>
+                <valueName>Dash Grab</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Grabs</controllingFieldValue>
+                <valueName>Pivot Grab</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Throws</controllingFieldValue>
+                <valueName>Forward Throw</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Throws</controllingFieldValue>
+                <valueName>Back Throw</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Throws</controllingFieldValue>
+                <valueName>Up Throw</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Throws</controllingFieldValue>
+                <valueName>Down Throw</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Aerial</controllingFieldValue>
+                <valueName>Neutral Air</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Aerial</controllingFieldValue>
+                <valueName>Forward Air</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Aerial</controllingFieldValue>
+                <valueName>Back Air</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Aerial</controllingFieldValue>
+                <valueName>Up Air</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Aerial</controllingFieldValue>
+                <valueName>Down Air</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Special</controllingFieldValue>
+                <valueName>Neutral Special</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Special</controllingFieldValue>
+                <valueName>Side Special</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Special</controllingFieldValue>
+                <valueName>Up Special</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Special</controllingFieldValue>
+                <valueName>Down Special</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Start_Up_Frame__c</fullName>
+        <externalId>false</externalId>
+        <label>Start Up Frame</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Moves</label>
+    <nameField>
+        <label>Moves Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Moves</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>
