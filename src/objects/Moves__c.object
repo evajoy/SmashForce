@@ -53,9 +53,9 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
-        <fullName>Categories__c</fullName>
+        <fullName>Category__c</fullName>
         <externalId>false</externalId>
-        <label>Categories</label>
+        <label>Category</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -69,15 +69,15 @@
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>Smash Attacks</fullName>
+                    <fullName>Smash Attack</fullName>
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>Grabs</fullName>
+                    <fullName>Grab</fullName>
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>Throws</fullName>
+                    <fullName>Throw</fullName>
                     <default>false</default>
                 </value>
                 <value>
@@ -132,6 +132,15 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Move_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Move Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
         <fullName>Move_Type__c</fullName>
         <externalId>false</externalId>
         <label>Move Type</label>
@@ -140,7 +149,7 @@
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
-            <controllingField>Categories__c</controllingField>
+            <controllingField>Category__c</controllingField>
             <restricted>true</restricted>
             <valueSetDefinition>
                 <sorted>false</sorted>
@@ -262,43 +271,43 @@
                 <valueName>Down Tilt</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Smash Attacks</controllingFieldValue>
+                <controllingFieldValue>Smash Attack</controllingFieldValue>
                 <valueName>Forward Smash</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Smash Attacks</controllingFieldValue>
+                <controllingFieldValue>Smash Attack</controllingFieldValue>
                 <valueName>Up Smash</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Smash Attacks</controllingFieldValue>
+                <controllingFieldValue>Smash Attack</controllingFieldValue>
                 <valueName>Down Smash</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Grabs</controllingFieldValue>
+                <controllingFieldValue>Grab</controllingFieldValue>
                 <valueName>Standing Grab</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Grabs</controllingFieldValue>
+                <controllingFieldValue>Grab</controllingFieldValue>
                 <valueName>Dash Grab</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Grabs</controllingFieldValue>
+                <controllingFieldValue>Grab</controllingFieldValue>
                 <valueName>Pivot Grab</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Throws</controllingFieldValue>
+                <controllingFieldValue>Throw</controllingFieldValue>
                 <valueName>Forward Throw</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Throws</controllingFieldValue>
+                <controllingFieldValue>Throw</controllingFieldValue>
                 <valueName>Back Throw</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Throws</controllingFieldValue>
+                <controllingFieldValue>Throw</controllingFieldValue>
                 <valueName>Up Throw</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Throws</controllingFieldValue>
+                <controllingFieldValue>Throw</controllingFieldValue>
                 <valueName>Down Throw</valueName>
             </valueSettings>
             <valueSettings>
@@ -352,10 +361,20 @@
         <unique>false</unique>
     </fields>
     <label>Moves</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Character__c</columns>
+        <columns>Category__c</columns>
+        <columns>Move_Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
     <nameField>
-        <label>Moves Name</label>
+        <displayFormat>M-{00000}</displayFormat>
+        <label>Move</label>
         <trackHistory>false</trackHistory>
-        <type>Text</type>
+        <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Moves</pluralLabel>
     <searchLayouts/>

@@ -40,10 +40,11 @@
         <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
-    <allowInChatterGroups>true</allowInChatterGroups>
+    <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <enableActivities>true</enableActivities>
+    <description>Keeps track of placements in tournament</description>
+    <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
@@ -52,43 +53,24 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
-        <fullName>Character_Image__c</fullName>
-        <description>Displays an image of the character</description>
+        <fullName>Player__c</fullName>
         <externalId>false</externalId>
-        <label>Character_Image</label>
-        <length>32768</length>
+        <label>Player</label>
+        <referenceTo>Player__c</referenceTo>
+        <relationshipLabel>Placements</relationshipLabel>
+        <relationshipName>Placements</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Html</type>
-        <visibleLines>25</visibleLines>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
     <fields>
-        <fullName>First_Smash_Appearance__c</fullName>
+        <fullName>Rank__c</fullName>
+        <description>Display the rank</description>
         <externalId>false</externalId>
-        <label>First Smash Appearance</label>
-        <length>30</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Series__c</fullName>
-        <externalId>false</externalId>
-        <inlineHelpText>Displays what series the character is from</inlineHelpText>
-        <label>Series</label>
-        <length>30</length>
-        <required>true</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Speed__c</fullName>
-        <externalId>false</externalId>
-        <label>Speed</label>
+        <label>Rank</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -98,63 +80,82 @@
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>Slow</fullName>
+                    <fullName>1st</fullName>
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>Average</fullName>
+                    <fullName>2nd</fullName>
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>Fast</fullName>
+                    <fullName>3rd</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4th</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5th</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6th</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7th</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8th</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9th</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>10th</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>11th</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>12th</fullName>
                     <default>false</default>
                 </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
     <fields>
-        <fullName>Weight__c</fullName>
-        <description>Allows users to filter through different weight classes</description>
+        <fullName>Tournament__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
-        <label>Weight</label>
+        <label>Tournament</label>
+        <referenceTo>Tournament__c</referenceTo>
+        <relationshipLabel>Placements</relationshipLabel>
+        <relationshipName>Placements</relationshipName>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Feather Weight</fullName>
-                    <default>true</default>
-                </value>
-                <value>
-                    <fullName>Light Weight</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>Medium Weight</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>Heavy Weight</fullName>
-                    <default>false</default>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
+        <type>Lookup</type>
     </fields>
-    <label>Character</label>
+    <label>Placement</label>
     <listViews>
         <fullName>All</fullName>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
     <nameField>
-        <label>Character Name</label>
+        <displayFormat>P-{0000}</displayFormat>
+        <label>Placement Name</label>
         <trackHistory>false</trackHistory>
-        <type>Text</type>
+        <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Characters</pluralLabel>
+    <pluralLabel>Placements</pluralLabel>
     <searchLayouts/>
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>ControlledByParent</sharingModel>
 </CustomObject>
