@@ -1,0 +1,23 @@
+<apex:page standardController="Tournament__c" recordSetVar="tournaments">
+    <!--Could have tabs, or another way of switching between views. Views could be
+tournaments, characters used-->
+    <c:headerComponent />
+    <form>
+        <apex:pageBlock title="Tournaments">
+            <apex:pageBlockSection >
+                <apex:pageBlockTable value="{!tournaments}" var="t">
+                    
+                    <apex:column headerValue="Name" >
+                        <apex:outputLink value="/apex/TournamentPage">"{!t.Name}"
+                            <apex:param name="tournamentId" value="{!t.Id}" /> <!--assignTo="{!tournamentId}" -->
+                        </apex:outputLink> 
+                    </apex:column>
+                    
+                    <apex:column headerValue="Tournament Date" value="{!t.Tournament_Date__c}" />
+                    <apex:column value="{!t.Location__c}" />
+                    <apex:column value="{!t.MaxPlayers__c}" />
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </form>
+</apex:page>

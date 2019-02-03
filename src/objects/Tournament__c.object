@@ -52,7 +52,7 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
-        <fullName>Locations__c</fullName>
+        <fullName>Location__c</fullName>
         <description>Location of the tournament</description>
         <externalId>false</externalId>
         <label>Location</label>
