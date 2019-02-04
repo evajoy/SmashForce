@@ -71,64 +71,13 @@
         <description>Display the rank</description>
         <externalId>false</externalId>
         <label>Rank</label>
+        <precision>2</precision>
         <required>false</required>
+        <scale>0</scale>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>1st</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>2nd</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>3rd</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>4th</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>5th</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>6th</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>7th</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>8th</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>9th</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>10th</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>11th</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>12th</fullName>
-                    <default>false</default>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Tournament__c</fullName>
@@ -148,6 +97,8 @@
         <fullName>All</fullName>
         <columns>NAME</columns>
         <columns>Tournament__c</columns>
+        <columns>Player__c</columns>
+        <columns>Rank__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>

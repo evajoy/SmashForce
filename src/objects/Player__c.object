@@ -65,6 +65,42 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>NumberOfLosses__c</fullName>
+        <externalId>false</externalId>
+        <label>NumberOfLosses</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NumberOfWins__c</fullName>
+        <externalId>false</externalId>
+        <label>NumberOfWins</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Overall_Rank__c</fullName>
+        <externalId>false</externalId>
+        <label>Overall Rank</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>SecondMostPlayedCharacter__c</fullName>
         <externalId>false</externalId>
         <label>SecondMostPlayedCharacter</label>
@@ -80,6 +116,9 @@
     <label>Player</label>
     <listViews>
         <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>NumberOfWins__c</columns>
+        <columns>NumberOfLosses__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>

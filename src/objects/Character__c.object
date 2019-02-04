@@ -63,6 +63,18 @@
         <visibleLines>25</visibleLines>
     </fields>
     <fields>
+        <fullName>Fighter_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Fighter Number</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>First_Smash_Appearance__c</fullName>
         <externalId>false</externalId>
         <label>First Smash Appearance</label>
@@ -84,33 +96,6 @@
         <type>TextArea</type>
     </fields>
     <fields>
-        <fullName>PlayStyle__c</fullName>
-        <externalId>false</externalId>
-        <label>PlayStyle</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Versatile</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>Zoner</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>Rush Down</fullName>
-                    <default>false</default>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Series__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Displays what series the character is from</inlineHelpText>
@@ -123,9 +108,9 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>SpeedValue__c</fullName>
+        <fullName>Speed_Value__c</fullName>
         <externalId>false</externalId>
-        <label>SpeedValue</label>
+        <label>Speed Value</label>
         <precision>6</precision>
         <required>false</required>
         <scale>3</scale>
@@ -158,14 +143,18 @@
                     <fullName>Fast</fullName>
                     <default>false</default>
                 </value>
+                <value>
+                    <fullName>Very Fast</fullName>
+                    <default>false</default>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
     <fields>
-        <fullName>Style__c</fullName>
+        <fullName>Style_Description__c</fullName>
         <description>Description of the fighting style of the character</description>
         <externalId>false</externalId>
-        <label>Style</label>
+        <label>Style Description</label>
         <length>350</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -173,9 +162,36 @@
         <visibleLines>5</visibleLines>
     </fields>
     <fields>
-        <fullName>WeightValue__c</fullName>
+        <fullName>Style__c</fullName>
         <externalId>false</externalId>
-        <label>WeightValue</label>
+        <label>Style</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Versatile</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Zoner</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rush Down</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Weight_Value__c</fullName>
+        <externalId>false</externalId>
+        <label>Weight Value</label>
         <precision>3</precision>
         <required>false</required>
         <scale>0</scale>
@@ -201,11 +217,7 @@
                     <default>true</default>
                 </value>
                 <value>
-                    <fullName>Light Weight</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>Medium Weight</fullName>
+                    <fullName>MiddleWeight</fullName>
                     <default>false</default>
                 </value>
                 <value>
