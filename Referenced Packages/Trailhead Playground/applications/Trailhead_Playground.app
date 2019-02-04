@@ -17,4 +17,10 @@
     <tab>standard-Product2</tab>
     <tab>standard-report</tab>
     <tab>standard-Dashboard</tab>
+    <tab>Player__c</tab>
+    <tab>Set__c</tab>
+    <tab>Tournament__c</tab>
+    <tab>Placement__c</tab>
+    <tab>Character__c</tab>
+    <tab>Moves__c</tab>
 </CustomApplication>
