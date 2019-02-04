@@ -1,0 +1,7 @@
+<apex:component controller="pagesController">
+    <apex:form >
+        <apex:commandButton action="{!startPage}" value="Start Page"/>
+        <apex:commandButton action="{!goToTournaments}" value="All Tournaments"/>
+        <apex:commandButton action="{!goToAllCharacters}" value="All Characters"/>
+    </apex:form>
+</apex:component>

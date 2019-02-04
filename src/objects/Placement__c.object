@@ -146,6 +146,8 @@
     <label>Placement</label>
     <listViews>
         <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Tournament__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>

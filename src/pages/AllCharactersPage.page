@@ -1,4 +1,5 @@
 <apex:page controller="CharacterController" standardStylesheets="true">
+    <c:headerComponent />
     <style type="text/css">
     .characterImage:hover{
 		opacity :.5;

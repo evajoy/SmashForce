@@ -1,8 +1,5 @@
 public class CharacterController {
     
-    
-    
-    
     //This can be an individual character controller, holding the properties of the
     public List<Character__c> Characters {
         get{

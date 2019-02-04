@@ -1,0 +1,27 @@
+<apex:page controller="TournamentExtension">
+    <c:headerComponent />
+    <!--Tabs / Sections here could be bracket, placements, characters-->
+    <apex:pageBlock >
+        <apex:outputText value="{!tournament.Name}" />
+        <apex:pageBlockSection >
+            <apex:pageBlockTable value="{!placements}" var="p">
+                <apex:column value="{!p.Player__c}" />
+                <apex:column value="{!p.Rank__c}" />
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection >
+            <apex:pageBlockTable value="{!sets}" var="s">
+                <apex:column value="{!s.Round__c}" />
+                <apex:column value="{!s.Player1__c}" />
+                <apex:column value="{!s.Player1Character__c}" />
+                <apex:column value="{!s.Player1Wins__c}" />
+                <apex:column value="{!s.Player1Losses__c}" />
+                <apex:column value="{!s.Player2__c}" />
+                <apex:column value="{!s.Player2Character__c}" />
+                <apex:column value="{!s.Player2Wins__c}" />
+                <apex:column value="{!s.Player2Losses__c}" />
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    <apex:outputLink value="/apex/TournamentsPage">All Tournaments</apex:outputLink>
+</apex:page>

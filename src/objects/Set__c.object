@@ -52,6 +52,19 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
+        <fullName>Loser__c</fullName>
+        <description>Loser of this set.</description>
+        <externalId>false</externalId>
+        <formula>IF(Player1Wins__c &gt; Player2Wins__c, Player2__c,
+IF(Player2Wins__c &gt; Player2Wins__c, Player1__c,null))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Loser</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Player1Character__c</fullName>
         <externalId>false</externalId>
         <label>Player1Character</label>
@@ -168,6 +181,34 @@
                     <fullName>Round 3</fullName>
                     <default>false</default>
                 </value>
+                <value>
+                    <fullName>Losers Round 1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Losers Round 2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Losers Round 3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Losers Round 4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Losers Round 5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Semifinals</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Finals</fullName>
+                    <default>false</default>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -182,6 +223,18 @@
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Winner__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Player1Wins__c &gt; Player2Wins__c, Player1__c,
+IF(Player2Wins__c &gt; Player2Wins__c, Player2__c,null))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Winner</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <label>Set</label>
     <listViews>
