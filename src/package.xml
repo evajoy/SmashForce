@@ -17,7 +17,16 @@
         <name>Flow</name>
     </types>
     <types>
+        <members>*</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>*</members>
         <name>ApexComponent</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomObject</name>
     </types>
     <version>38.0</version>
 </Package>

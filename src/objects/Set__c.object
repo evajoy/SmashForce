@@ -55,8 +55,8 @@
         <fullName>Loser__c</fullName>
         <description>Loser of this set.</description>
         <externalId>false</externalId>
-        <formula>IF(Player1Wins__c &gt; Player2Wins__c, Player2__c,
-IF(Player2Wins__c &gt; Player2Wins__c, Player1__c,null))</formula>
+        <formula>IF(Player1Wins__c &gt; Player2Wins__c, Player2__r.Name,
+IF(Player2Wins__c &gt; Player1Wins__c, Player1__r.Name,null))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Loser</label>
         <required>false</required>
@@ -227,8 +227,8 @@ IF(Player2Wins__c &gt; Player2Wins__c, Player1__c,null))</formula>
     <fields>
         <fullName>Winner__c</fullName>
         <externalId>false</externalId>
-        <formula>IF(Player1Wins__c &gt; Player2Wins__c, Player1__c,
-IF(Player2Wins__c &gt; Player2Wins__c, Player2__c,null))</formula>
+        <formula>IF(Player1Wins__c &gt; Player2Wins__c, Player1__r.Name,
+IF(Player2Wins__c &gt; Player1Wins__c, Player2__r.Name,null))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Winner</label>
         <required>false</required>
@@ -239,6 +239,13 @@ IF(Player2Wins__c &gt; Player2Wins__c, Player2__c,null))</formula>
     <label>Set</label>
     <listViews>
         <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Loser__c</columns>
+        <columns>Player1Losses__c</columns>
+        <columns>Player1Wins__c</columns>
+        <columns>Round__c</columns>
+        <columns>Tournament__c</columns>
+        <columns>Winner__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>

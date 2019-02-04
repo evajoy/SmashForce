@@ -22,7 +22,7 @@ public class TournamentExtension {
     public List<Placement__c> placements{
         get {
             if(placements == null) {
-                placements = [SELECT Player__c, Rank__c
+                placements = [SELECT Player__c, Rank__c, Player__r.Overall_Rank__c
                               FROM Placement__c
                               WHERE Tournament__c = :tournamentId
                               ORDER BY Rank__c];
@@ -36,7 +36,7 @@ public class TournamentExtension {
         get {
             if(sets == null) {
                 sets = [SELECT Player1__c, Player2__c, Player1Wins__c, Player2Wins__c, Player1Losses__c, Player2Losses__c, 
-                        	   Round__c, Player1Character__c, Player2Character__c
+                        	   Round__c, Player1Character__c, Player2Character__c, Winner__c, Loser__c
                         FROM Set__c
                         WHERE Tournament__c = :tournamentId
                         ORDER BY Round__c];
