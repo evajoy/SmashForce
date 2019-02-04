@@ -3,16 +3,13 @@
     <apex:form >
         <apex:pageBlock >
             <apex:pageBlockSection >
-                <apex:pageBlockSectionItem >
-                    <apex:actionSupport >
-                        Tournaments Page
-                    </apex:actionSupport>
-                </apex:pageBlockSectionItem>
-                <apex:pageBlockSectionItem >
-                    <apex:commandLink action="{!goToAllCharacters}">
-                        All Characters Page
+                    
+                    <apex:commandLink action="{!goToTournaments}">
+                        <apex:image url="{!$Resource.TournamentsLogo}" width="500" height="500"/> 
                     </apex:commandLink>
-                </apex:pageBlockSectionItem>
+                    <apex:commandLink action="{!goToAllCharacters}">
+                        <apex:image url="{!$Resource.CharactersLogo}" width="500" height="500"/> 
+                    </apex:commandLink>
             </apex:pageBlockSection>
         </apex:pageBlock>
     </apex:form>
