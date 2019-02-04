@@ -7,6 +7,7 @@
             <apex:pageBlockTable value="{!placements}" var="p">
                 <apex:column value="{!p.Player__c}" />
                 <apex:column value="{!p.Rank__c}" />
+                <apex:column value="{!p.Player__r.Overall_Rank__c}" />
             </apex:pageBlockTable>
         </apex:pageBlockSection>
         <apex:pageBlockSection >
@@ -20,6 +21,8 @@
                 <apex:column value="{!s.Player2Character__c}" />
                 <apex:column value="{!s.Player2Wins__c}" />
                 <apex:column value="{!s.Player2Losses__c}" />
+                <apex:column value="{!s.Winner__c}" />
+                <apex:column value="{!s.Loser__c}" />
             </apex:pageBlockTable>
         </apex:pageBlockSection>
     </apex:pageBlock>
