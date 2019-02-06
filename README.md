@@ -22,6 +22,64 @@ In the Tournament Section of the app, Users will be greeted by a list of the tou
 
 Upon clicking an individual tournament, a User will be brought to the visual representation of the tournament. Clicking the other tabs available, they can view all of the placements of the players within the tournament. Next to the rank the players received will be the player's overall rank within the league itself. The most played character of the player will also be displayed as a column next to these rankings. The last tab is the description of all of the sets, showing all of the data for the sets in text format. This includes Round, the Playes' Names, their Characters, Wins, Losses, and who Won and who Lost.
 
+## File Breakdown / Descriptions
+Descriptions about the use / purpose of the files found in the project.
+
+### Pages
+* **StartPage -** <br/>
+The main landing page. Options to click to the Character Wikia or Tournament Tool section.
+* **AllCharactersPage -** <br/>
+Displays all of the characters available to sort, filter, and click to get more information about.
+* **CharacterPage -** <br/>
+Displays information related to a specific Character.
+* **TournamentsPage -** <br/>
+Displays all of the tournaments available to get more information about.
+* **TournamentPage -** <br/>
+Displays all of the information related to a specific Tournament.
+### Controllers
+* **pagesController -** <br/>
+Stores the PageReference functions used by the headerComponent to transfer between the main pages. 
+
+* **AllCharactersController -** <br/>
+Stores information related to the characters being displayed on the AllCharactersPage. Also enables the filtering and sorting by Weights, Speeds, Styles, and Most/Least Played. Passes the parameter of the character clicked to the CharacterPageController.
+
+* **CharacterPageController -** <br/>
+Stores information about the character, grabbing data from the database using the ID received from the AllCharactersController. The moves will be grabbed related to the character, then stored in multiple lists. The lists store All of the Moves, Normal Moves, Aerial Moves, Smash Attacks, Specials, Grabs, and Throws to be displayed in tabs on the CharacterPage.
+
+* **TournamentsPageController -** <br/>
+Stores the information about the tournaments. 
+  - *SortByDate()* allows the user  to click on the Tournament Date column header to sort by the most recent or the last tournament.
+
+### Triggers
+* **SetTrigger -** <br/>
+This trigger calls the getMostCharactersPlayed() function after insert, update, or undelete. The IDs of the players is added into a set to preserve uniqueuness. This set is passed to the helper function, which will update the players referenced. 
+
+* **PlacementTrigger -** <br/>
+This trigger calls the updatePlacementAverage() function after Insert, Update, Delete, or Undelete. First it will check if the rank on the placement deleted was not null before calling the function on the relevant placements.
+
+* **PlayerTrigger -** <br/>
+This trigger calls the updateNotablePlayers() function after Insert, Update, or Undelete. It will first make sure the mostPlayedCharacter field on the Player has a name before passing the list of players to the helper function.  
+
+### Components
+* **headerComponent -** <br/>
+A navigation component to go to the Start, Tournaments, or All Characters pages.
+* **bracketComponent -** <br/>
+Takes in a list of sets as a parameter, displays it visually with conditional class styling to denote the Winner & Loser.
+
+### Extensions / Helpers
+* **SetTriggerHelper -** <br/>
+*getMostCharactersPlayed(Set<Id> playerIds)* Sets the Most Played Character Field on the Player object. <br/>
+  - This assumes that each set will have two players, and their characters are set.
+
+* **PlacementCalculatorHelper -** <br/>
+*updatePlacementAverage(List<Placement__c> placement)* Sets the Overall Rank field on the Player object. <br/>
+  - Uses the average of all of the ranks the players have played in to calculate the overall ranking.
+ 
+* **PlayerTriggerHelper -** <br/>
+*updateNotablePlayers(List<Player__c> playerList>) Sets the Notable Players field on the Character object.* <br/>
+  - As of right now, this does not remove the name from the Notable Players field on the Character they previously were in. It only adds people to the new field.
+
+
 ## Built With
 * Salesforce
 * Apex - Controllers / Extensions
