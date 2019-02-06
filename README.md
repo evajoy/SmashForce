@@ -1,11 +1,13 @@
 # SmashForce
-SmashForce is a wikia and a tool that could be used by individual users, or users who are parts of tournament leagues. The wikia allows users to view characters in game, and the data around the character itself and their moves. Users can filter what they see based on categories, and sort by multiple fields. For tournaments, users can input tournament data, and then see tournament results.
+SmashForce is a wikia and a tool that could be used by individual users, or users who are parts of tournament leagues. The wikia allows users to view characters in game, the data around the character itself and their moves. Users can filter what they see based on categories, and sort by multiple fields. For tournaments, users can input tournament data, and then see tournament results.
 
 ## Getting Started
 There are two main sections within SmashForce. One is the wikia, which stores Character data for Super Smash Bros. Characters, and their moves. The other is a tournament tool for managers of tournament leagues to insert their league's tournament information, and have others view the data.
 
 ### Character Wikia
 Players launching this Wikia will be greeted by images of all the characters in the database, with filtering and sorting options above. Players can discover which character is perfect for them, sorting by Weight, Speed, or Play Style. Also they can sort the characters they've searched by Most Played and Least Played.
+
+* Note: The Most Played and Least Played are determined by data from the tournament tool
 
 Clicking on a Character they want to play / learn more about, they're greeted with more information about that character. Specifically, we store data about what Series the character is from, their First Smash Appearance, Fighter Number, Speed, Weight, Style, Fighting Description, and Notable Players.
 
