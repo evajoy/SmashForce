@@ -79,7 +79,16 @@ Takes in a list of sets as a parameter, displays it visually with conditional cl
 *updateNotablePlayers(List<Player__c> playerList>) Sets the Notable Players field on the Character object.* <br/>
   - As of right now, this does not remove the name from the Notable Players field on the Character they previously were in. It only adds people to the new field.
 
-
+### Processes
+* **NumberOfTimesPlayed -** <br/>
+Updates the Times Played field on the Character Object 
+  - Checks for the Character's name in the Player1 or Player 2 Character field on Set.
+  - Checks that the name is either new or changed to be different from before.
+* **NumberOfWins -** <br/>
+Adds the amount of wins and losses to the Player Object from the Wins & Losses for each player on Set.
+  - Does not handle removing these wins or losses if a set is deleted.
+  - Checks that the field is either new or changed to be different from before. 
+  
 ## Built With
 * Salesforce
 * Apex - Controllers / Extensions
