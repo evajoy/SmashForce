@@ -52,7 +52,7 @@ Stores the information about the tournaments.
 
 ### Triggers
 * **SetTrigger -** <br/>
-This trigger calls the getMostCharactersPlayed() function after insert, update, or undelete. The IDs of the players is added into a set to preserve uniqueuness. This set is passed to the helper function, which will update the players referenced. 
+This trigger calls the getMostCharactersPlayed() function after insert, update, or undelete. The IDs of the players is added into a set to preserve uniqueness. This set is passed to the helper function, which will update the players referenced. 
 
 * **PlacementTrigger -** <br/>
 This trigger calls the updatePlacementAverage() function after Insert, Update, Delete, or Undelete. First it will check if the rank on the placement deleted was not null before calling the function on the relevant placements.
