@@ -21,13 +21,12 @@ In the Tournament Section of the app, Users will be greeted by a list of the tou
 Upon clicking an individual tournament, a User will be brought to the visual representation of the tournament. Clicking the other tabs available, they can view all of the placements of the players within the tournament. Next to the rank the players received will be the player's overall rank within the league itself. The most played character of the player will also be displayed as a column next to these rankings. The last tab is the description of all of the sets, showing all of the data for the sets in text format. This includes Round, the Playes' Names, their Characters, Wins, Losses, and who Won and who Lost.
 
 ## Built With
-Salesforce
-Apex - Controllers / Extensions
-Visualforce - Pages / Components
-HTML
-CSS
+* Salesforce
+* Apex - Controllers / Extensions
+* Visualforce - Pages / Components
+* HTML
+* CSS
 
 ## Authors
-Eva Lahtinen
-Stephen Shekailo
-See also the list of contributors who participated in this project.
+* Eva Lahtinen
+* Stephen Shekailo
