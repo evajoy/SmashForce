@@ -1,0 +1,121 @@
+<apex:page controller="CharacterPageController">
+    
+    <c:headerComponent />
+    <!-- <apex:stylesheet value="{!$Resource.CharacterPageCss}" /> -->
+    <style type="text/css">
+        h1 		{color:#E52521;}
+        
+        h2,h3 	{font-size:18px;
+        line-height:30px;}
+        
+        h3 		{font-weight:normal;}
+        body {
+        background-color: #f4f1f1;
+        }
+    </style>
+    
+    <apex:form >     
+        <apex:pageBlock >
+            
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    
+                    <apex:outputField value="{! character.Character_Image__c}" />
+                    
+                </apex:pageBlockSectionItem>          
+                
+                <h1 style="font-size:60px;">{! character.Name }</h1> <br/>
+                <h2>Series:</h2> 
+                <h3>{! character.Series__c}</h3><br/>
+                <h2>First Smash Game:</h2> 
+                <h3>{! character.First_Smash_Appearance__c}</h3><br/>
+                <h2>Fighter Number:</h2> 
+                <h3>{! character.Fighter_Number__c}</h3><br/>
+                <h2>Speed:</h2>
+                <h3>{! character.Speed__c}</h3> <h3>({! character.Speed_Value__c})</h3><br/>
+                <h2>Weight:</h2> 
+                <h3>{! character.Weight__c}</h3> <h3>({! character.Weight_Value__c})</h3><br/>
+                <h2>Style:</h2> 
+                <h3>{! character.Style__c}</h3><br/>
+                <h2>Description:</h2>
+                <h3>{! character.Style_Description__c}</h3><br/>
+                <h2>Notable Players:</h2> 
+                <h3>{! character.NotablePlayers__c}</h3><br/>
+            </apex:pageBlockSection>
+            
+            <apex:tabPanel switchType="client" selectedTab="name2" id="theTabPanel"
+                           tabClass="activeTab" inactiveTabClass="inactiveTab">
+                <apex:tab label="All Moves" name="name1" id="allMoves">
+                    <apex:pageBlockTable value="{! allMoves}" var="move">
+                        <apex:column value="{! move.Category__c}" />
+                        <apex:column value="{! move.Move_Name__c}" />
+                        <apex:column value="{! move.Start_Up_Frame__c}" />
+                        <apex:column value="{! move.First_Active_Frame__c}" />
+                        <apex:column value="{! move.Damage__c}" />
+                    </apex:pageBlockTable>
+                </apex:tab>
+                
+                <apex:tab label="Normals" name="name2" id="Normals">
+                    <apex:pageBlockTable value="{!Normals}" var="n">
+                        <apex:column value="{!n.Move_Name__c}" />
+                        <apex:column value="{!n.Start_Up_Frame__c}" />
+                        <apex:column value="{!n.First_Active_Frame__c}" />
+                        <apex:column value="{!n.Damage__c}" />
+                    </apex:pageBlockTable>
+                </apex:tab>
+                <apex:tab label="Aerials" name="name3" id="Aerials">
+                    <apex:pageBlockTable value="{!Aerials}" var="a">
+                        <apex:column value="{!a.Move_Name__c}" />
+                        <apex:column value="{!a.Start_Up_Frame__c}" />
+                        <apex:column value="{!a.First_Active_Frame__c}" />
+                        <apex:column value="{!a.Damage__c}" />
+                    </apex:pageBlockTable>
+                </apex:tab>
+                <apex:tab label="SmashAttacks" name="name4" id="SmashAttacks">
+                    <apex:pageBlockTable value="{!SmashAttacks}" var="sm">
+                        <apex:column value="{!sm.Move_Name__c}" />
+                        <apex:column value="{!sm.Start_Up_Frame__c}" />
+                        <apex:column value="{!sm.First_Active_Frame__c}" />
+                        <apex:column value="{!sm.Damage__c}" />
+                    </apex:pageBlockTable>
+                </apex:tab>
+                <apex:tab label="Specials" name="name5" id="Specials">
+                    <apex:pageBlockTable value="{!Specials}" var="sp">
+                        <apex:column value="{!sp.Move_Name__c}" />
+                        <apex:column value="{!sp.Start_Up_Frame__c}" />
+                        <apex:column value="{!sp.First_Active_Frame__c}" />
+                        <apex:column value="{!sp.Damage__c}" />
+                    </apex:pageBlockTable>
+                </apex:tab>
+                <apex:tab label="Grabs" name="name6" id="Grabs">
+                    <apex:pageBlockTable value="{!Grabs}" var="g">
+                        <apex:column value="{!g.Move_Name__c}" />
+                        <apex:column value="{!g.Start_Up_Frame__c}" />
+                        <apex:column value="{!g.First_Active_Frame__c}" />
+                        <apex:column value="{!g.Damage__c}" />
+                    </apex:pageBlockTable>
+                </apex:tab>
+                <apex:tab label="Throws" name="name7" id="Throws">
+                    <apex:pageBlockTable value="{!Throws}" var="t">
+                        <apex:column value="{!t.Move_Name__c}" />
+                        <apex:column value="{!t.Start_Up_Frame__c}" />
+                        <apex:column value="{!t.First_Active_Frame__c}" />
+                        <apex:column value="{!t.Damage__c}" />
+                    </apex:pageBlockTable>
+                </apex:tab>
+                
+            </apex:tabPanel>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

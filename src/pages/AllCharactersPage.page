@@ -1,0 +1,56 @@
+<apex:page controller="AllCharactersController" standardStylesheets="true">
+    <c:headerComponent />
+    <style type="text/css">
+        .characterImage {
+        }
+        .characterImage:hover{
+        opacity :.5;
+        filter: drop-shadow(0 0 0.75rem crimson);
+        }
+        body {
+        background-color: #f4f1f1;
+        }
+    </style>
+    <apex:form >
+        <apex:pageBlock title="All Characters" >
+                    <h1>
+                        Weight:
+                    </h1>
+                    <apex:selectList value="{!Weight}" size="1">
+                        <apex:selectOptions value="{!Weights}"/>
+                        <apex:actionSupport action="{!filterCharacters}" event="onchange" reRender="CharacterTable" />
+                    </apex:selectList>
+                    <h1>
+                        Speed:
+                    </h1>
+                    <apex:selectList value="{!Speed}" size="1">
+                        <apex:selectOptions value="{!Speeds}" />
+                        <apex:actionSupport action="{!filterCharacters}" event="onchange" reRender="CharacterTable" />
+                    </apex:selectList>
+                    <h1>
+                        Style:
+                    </h1>
+                    <apex:selectList value="{!Style}" size="1">
+                        <apex:selectOptions value="{!Styles}" />
+                        <apex:actionSupport action="{!filterCharacters}" event="onchange" reRender="CharacterTable" />
+                    </apex:selectList>
+            		
+            		<apex:commandLink action="{!changePlayed}">{!mostLeastPlayed}</apex:commandLink>
+            
+            <apex:pageBlockSection id="CharacterTable" columns="3">
+                <apex:repeat value="{!Characters}" var="char">
+                    <apex:pageBlockSectionItem dataTitle="{!char.Name}" id="characterImage" dataStyleClass="characterImage">
+                        <apex:commandLink action="{!goToCharacterPage}" >
+                            
+                            <apex:outputField value="{!char.Character_Image__c}" />
+                            <apex:param name="charId" value="{!char.Id}" assignTo="{!charId}"/>
+                            
+                        </apex:commandLink>
+                    </apex:pageBlockSectionItem>
+                </apex:repeat>
+            </apex:pageBlockSection>
+            <!-- </apex:pageBlockTable> -->
+        </apex:pageBlock>
+    </apex:form> 
+    
+</apex:page>

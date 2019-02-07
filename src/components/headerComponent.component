@@ -1,0 +1,8 @@
+<apex:component controller="pagesController">
+    <a href="/apex/StartPage"><apex:image url="{!$Resource.SmashForceLogo}" width="150"/></a>
+            <apex:form >
+                <apex:commandButton action="{!startPage}" value="Start Page"/>
+                <apex:commandButton action="{!goToTournaments}" value="All Tournaments"/>
+                <apex:commandButton action="{!goToAllCharacters}" value="All Characters"/>
+            </apex:form>
+</apex:component>
