@@ -52,6 +52,18 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
+        <fullName>BracketNumber__c</fullName>
+        <description>The number the set falls in the tournament, 1 will be the first match played in a round.</description>
+        <externalId>false</externalId>
+        <label>BracketNumber</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Loser__c</fullName>
         <description>Loser of this set.</description>
         <externalId>false</externalId>
@@ -245,7 +257,7 @@ IF(Player2Wins__c &gt; Player1Wins__c, Player2__r.Name,null))</formula>
         <columns>Player1Wins__c</columns>
         <columns>Round__c</columns>
         <columns>Tournament__c</columns>
-        <columns>Winner__c</columns>
+        <columns>BracketNumber__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>

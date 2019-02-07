@@ -1,30 +1,64 @@
-<apex:page controller="TournamentExtension">
+<apex:page controller="TournamentController">
+    <style>
+        body {
+        background-color: #f4f1f1;
+        }
+    </style>
     <c:headerComponent />
-    <!--Tabs / Sections here could be bracket, placements, characters-->
-    <apex:pageBlock >
-        <apex:outputText value="{!tournament.Name}" />
-        <apex:pageBlockSection >
-            <apex:pageBlockTable value="{!placements}" var="p">
-                <apex:column value="{!p.Player__c}" />
-                <apex:column value="{!p.Rank__c}" />
-                <apex:column value="{!p.Player__r.Overall_Rank__c}" />
-            </apex:pageBlockTable>
-        </apex:pageBlockSection>
-        <apex:pageBlockSection >
-            <apex:pageBlockTable value="{!sets}" var="s">
-                <apex:column value="{!s.Round__c}" />
-                <apex:column value="{!s.Player1__c}" />
-                <apex:column value="{!s.Player1Character__c}" />
-                <apex:column value="{!s.Player1Wins__c}" />
-                <apex:column value="{!s.Player1Losses__c}" />
-                <apex:column value="{!s.Player2__c}" />
-                <apex:column value="{!s.Player2Character__c}" />
-                <apex:column value="{!s.Player2Wins__c}" />
-                <apex:column value="{!s.Player2Losses__c}" />
-                <apex:column value="{!s.Winner__c}" />
-                <apex:column value="{!s.Loser__c}" />
-            </apex:pageBlockTable>
-        </apex:pageBlockSection>
-    </apex:pageBlock>
-    <apex:outputLink value="/apex/TournamentsPage">All Tournaments</apex:outputLink>
+    <apex:form >
+        <!--Tabs / Sections here could be bracket, placements, characters-->
+        <apex:pageBlock >
+            <apex:outputText value="{!tournament.Name}"  />
+            <apex:tabPanel switchType="client" selectedTab="name2" id="theTabPanel">
+                <apex:tab label="Bracket" name="bracket" id="Bracket">
+                    <c:bracketComponent sets="{!sets}" />
+                </apex:tab>
+                <apex:tab label="Placements" name="placements" id="Placements">
+                    <apex:pageBlockSection >
+                        <apex:pageBlockTable value="{!placements}" var="p">
+                            <apex:column value="{!p.Player__c}" />
+                            <apex:column >
+                                <apex:facet name="header">
+                                    <apex:outputPanel >
+                                        <apex:commandLink action="{!sortByRanking}">Rank</apex:commandLink>
+                                    </apex:outputPanel>
+                                </apex:facet>
+                                
+                                <apex:outputText value="{!p.Rank__c}"/>
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header">
+                                    <apex:outputPanel >
+                                        <apex:commandLink action="{!sortByOverallRanking}">Overall Rank</apex:commandLink>
+                                    </apex:outputPanel>
+                                </apex:facet>
+                                <apex:outputText value="{!p.Player__r.Overall_Rank__c}"/>
+                            </apex:column>
+                            <apex:column headerValue="Character Played">
+                                <apex:outputField value="{!p.Player__r.MostPlayedCharacter__c}" />
+                            </apex:column>
+                        </apex:pageBlockTable>
+                    </apex:pageBlockSection>
+                </apex:tab>
+                <apex:tab label="Sets" name="sets" id="sets">
+                    <apex:pageBlockSection >
+                        <apex:pageBlockTable value="{!sets}" var="s">
+                            <apex:column value="{!s.Round__c}" />
+                            <apex:column value="{!s.Player1__c}" />
+                            <apex:column value="{!s.Player1Character__c}" />
+                            <apex:column value="{!s.Player1Wins__c}" />
+                            <apex:column value="{!s.Player1Losses__c}" />
+                            <apex:column value="{!s.Player2__c}" />
+                            <apex:column value="{!s.Player2Character__c}" />
+                            <apex:column value="{!s.Player2Wins__c}" />
+                            <apex:column value="{!s.Player2Losses__c}" />
+                            <apex:column value="{!s.Winner__c}" />
+                            <apex:column value="{!s.Loser__c}" />
+                        </apex:pageBlockTable>
+                    </apex:pageBlockSection>
+                </apex:tab>
+            </apex:tabPanel>
+        </apex:pageBlock>
+        <apex:outputLink value="/apex/TournamentsPage">All Tournaments</apex:outputLink>
+    </apex:form>
 </apex:page>

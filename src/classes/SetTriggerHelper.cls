@@ -10,8 +10,8 @@ public class SetTriggerHelper {
         List<Player__c> playersToUpdate = new List<Player__c>();
         
         if(playerIds.size() > 0){
-            List<Set__c> allSets = [SELECT Player1__c, Player2__c, Player1Character__c, Player2Character__c, Player1Character__r.Name,
-                                     	   Player2Character__r.Name
+            List<Set__c> allSets = [SELECT Player1Character__c, Player2Character__c, 
+                                    Player1Character__r.Name, Player2Character__r.Name
                                     FROM Set__c
                                     WHERE Player1__c IN :playerIds OR Player2__c IN :playerIds];
             

@@ -1,8 +1,13 @@
-<apex:page standardController="Tournament__c" recordSetVar="tournaments">
+<apex:page controller="TournamentsPageController">
     <!--Could have tabs, or another way of switching between views. Views could be
 tournaments, characters used-->
+    <style>
+        body {
+        background-color: #f4f1f1;
+        }
+    </style>
     <c:headerComponent />
-    <form>
+    <apex:form >
         <apex:pageBlock title="Tournaments">
             <apex:pageBlockSection >
                 <apex:pageBlockTable value="{!tournaments}" var="t">
@@ -13,11 +18,18 @@ tournaments, characters used-->
                         </apex:outputLink> 
                     </apex:column>
                     
-                    <apex:column headerValue="Tournament Date" value="{!t.Tournament_Date__c}" />
+                    <apex:column >
+                        <apex:facet name="header">
+                            <apex:outputPanel >
+                                <apex:commandLink action="{!SortByDate}">Tournament Date</apex:commandLink>
+                            </apex:outputPanel>
+                        </apex:facet>
+                        <apex:outputText value="{!t.Tournament_Date__c}"/>
+                    </apex:column>
                     <apex:column value="{!t.Location__c}" />
                     <apex:column value="{!t.MaxPlayers__c}" />
                 </apex:pageBlockTable>
             </apex:pageBlockSection>
         </apex:pageBlock>
-    </form>
+    </apex:form>
 </apex:page>

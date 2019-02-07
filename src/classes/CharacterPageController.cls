@@ -13,7 +13,7 @@ public class CharacterPageController {
         get {
             if(character == null) {
                 character = [SELECT Name, Series__c, First_Smash_Appearance__c, Fighter_Number__c, Speed__c, Speed_Value__c, 
-									Weight__c, Weight_Value__c, Style__c, Style_Description__c, Character_Image__c
+									Weight__c, Weight_Value__c, Style__c, Style_Description__c, Character_Image__c, NotablePlayers__c
                             FROM Character__c
                             WHERE Id = :charId];
             }

@@ -101,17 +101,17 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>SecondMostPlayedCharacter__c</fullName>
+        <fullName>Win_Percentage__c</fullName>
         <externalId>false</externalId>
-        <label>SecondMostPlayedCharacter</label>
+        <formula>NumberOfWins__c / (NumberOfLosses__c + NumberOfWins__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Win Percentage</label>
+        <precision>18</precision>
         <required>false</required>
+        <scale>0</scale>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetName>Playable_Characters</valueSetName>
-        </valueSet>
+        <type>Percent</type>
     </fields>
     <label>Player</label>
     <listViews>

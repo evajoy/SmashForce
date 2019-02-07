@@ -1,0 +1,109 @@
+<apex:component controller="bracketComponentHelper">
+    <apex:attribute name="sets" description="List of sets from the tournament" type="Set__c[]" assignTo="{!allSets}"/>
+    <apex:stylesheet value="{!$Resource.tournamentCSS}" />
+    <main id="tournament">
+        <ul class="round round-1">
+            <h1>Round 1</h1>
+            <li class="spacer">&nbsp;</li>
+            <apex:repeat value="{!round1}" var="set">
+                <li class="{!IF(set.Player1Wins__c > set.Player2Wins__c,'game game-top winner','game game-top')}">{!set.Player1__r.Name}<span>{!set.Player1Wins__c}</span></li>
+                <li class="game game-spacer">&nbsp;</li>
+                <li class="{!IF(set.Player2Wins__c > set.Player1Wins__c,'game game-bottom winner','game game-bottom')}">{!set.Player2__r.Name}<span>{!set.Player2Wins__c}</span></li>
+                <li class="spacer">&nbsp;</li>
+            </apex:repeat>
+        </ul>
+        <ul class="round round-2">
+            <h1>Round 2</h1>
+            <li class="spacer">&nbsp;</li>
+            <apex:repeat value="{!round2}" var="set">
+                <li class="{!IF(set.Player1Wins__c > set.Player2Wins__c,'game game-top winner','game game-top')}">{!set.Player1__r.Name}<span>{!set.Player1Wins__c}</span></li>
+                <li class="game game-spacer">&nbsp;</li>
+                <li class="{!IF(set.Player2Wins__c > set.Player1Wins__c,'game game-bottom winner','game game-bottom')}">{!set.Player2__r.Name}<span>{!set.Player2Wins__c}</span></li>
+                <li class="spacer">&nbsp;</li>
+            </apex:repeat>
+            
+        </ul>
+        <ul class="round round-3">
+            <h1>Round 3</h1>
+            <li class="spacer">&nbsp;</li>
+            <apex:repeat value="{!round3}" var="set">
+                <li class="{!IF(set.Player1Wins__c > set.Player2Wins__c,'game game-top winner','game game-top')}">{!set.Player1__r.Name}<span>{!set.Player1Wins__c}</span></li>
+                <li class="game game-spacer">&nbsp;</li>
+                <li class="{!IF(set.Player2Wins__c > set.Player1Wins__c,'game game-bottom winner','game game-bottom')}">{!set.Player2__r.Name}<span>{!set.Player2Wins__c}</span></li>
+                <li class="spacer">&nbsp;</li>
+            </apex:repeat>
+        </ul>
+        <ul class="round round-4">
+            <h1>Semifinals</h1>
+            <li class="spacer">&nbsp;</li>
+            <apex:repeat value="{!semifinals}" var="set">
+                <li class="{!IF(set.Player1Wins__c > set.Player2Wins__c,'game game-top winner','game game-top')}">{!set.Player1__r.Name}<span>{!set.Player1Wins__c}</span></li>
+                <li class="game game-spacer">&nbsp;</li>
+                <li class="{!IF(set.Player2Wins__c > set.Player1Wins__c,'game game-bottom winner','game game-bottom')}">{!set.Player2__r.Name}<span>{!set.Player2Wins__c}</span></li>
+                <li class="spacer">&nbsp;</li>
+            </apex:repeat>
+        </ul>
+		<ul class="round round-4">
+            <h1>Finals</h1>
+            <li class="spacer">&nbsp;</li>
+            <apex:repeat value="{!finals}" var="set">
+                <li class="{!IF(set.Player1Wins__c > set.Player2Wins__c,'game game-top winner','game game-top')}">{!set.Player1__r.Name}<span>{!set.Player1Wins__c}</span></li>
+                <li class="game game-spacer">&nbsp;</li>
+                <li class="{!IF(set.Player2Wins__c > set.Player1Wins__c,'game game-bottom winner','game game-bottom')}">{!set.Player2__r.Name}<span>{!set.Player2Wins__c}</span></li>
+                <li class="spacer">&nbsp;</li>
+            </apex:repeat>
+        </ul>
+    </main>
+    <main id="tournament">
+        <ul class="round round-1">
+            <h1>Losers Round 1</h1>
+            <li class="spacer">&nbsp;</li>
+            <apex:repeat value="{!losersRound1}" var="set">
+                <li class="{!IF(set.Player1Wins__c > set.Player2Wins__c,'game game-top winner','game game-top')}">{!set.Player1__r.Name}<span>{!set.Player1Wins__c}</span></li>
+                <li class="game game-spacer">&nbsp;</li>
+                <li class="{!IF(set.Player2Wins__c > set.Player1Wins__c,'game game-bottom winner','game game-bottom')}">{!set.Player2__r.Name}<span>{!set.Player2Wins__c}</span></li>
+                <li class="spacer">&nbsp;</li>
+            </apex:repeat>
+        </ul>
+        <ul class="round round-2">
+            <h1>Losers Round 2</h1>
+            <li class="spacer">&nbsp;</li>
+            <apex:repeat value="{!losersRound2}" var="set">
+                <li class="{!IF(set.Player1Wins__c > set.Player2Wins__c,'game game-top winner','game game-top')}">{!set.Player1__r.Name}<span>{!set.Player1Wins__c}</span></li>
+                <li class="game game-spacer">&nbsp;</li>
+                <li class="{!IF(set.Player2Wins__c > set.Player1Wins__c,'game game-bottom winner','game game-bottom')}">{!set.Player2__r.Name}<span>{!set.Player2Wins__c}</span></li>
+                <li class="spacer">&nbsp;</li>
+            </apex:repeat>
+        </ul>
+        <ul class="round round-2">
+            <h1>Losers Round 3</h1>
+            <li class="spacer">&nbsp;</li>
+            <apex:repeat value="{!losersRound3}" var="set">
+                <li class="{!IF(set.Player1Wins__c > set.Player2Wins__c,'game game-top winner','game game-top')}">{!set.Player1__r.Name}<span>{!set.Player1Wins__c}</span></li>
+                <li class="game game-spacer">&nbsp;</li>
+                <li class="{!IF(set.Player2Wins__c > set.Player1Wins__c,'game game-bottom winner','game game-bottom')}">{!set.Player2__r.Name}<span>{!set.Player2Wins__c}</span></li>
+                <li class="spacer">&nbsp;</li>
+            </apex:repeat>
+        </ul>
+        <ul class="round round-2">
+            <h1>Losers Round 4</h1>
+            <li class="spacer">&nbsp;</li>
+            <apex:repeat value="{!losersRound4}" var="set">
+                <li class="{!IF(set.Player1Wins__c > set.Player2Wins__c,'game game-top winner','game game-top')}">{!set.Player1__r.Name}<span>{!set.Player1Wins__c}</span></li>
+                <li class="game game-spacer">&nbsp;</li>
+                <li class="{!IF(set.Player2Wins__c > set.Player1Wins__c,'game game-bottom winner','game game-bottom')}">{!set.Player2__r.Name}<span>{!set.Player2Wins__c}</span></li>
+                <li class="spacer">&nbsp;</li>
+            </apex:repeat>
+        </ul>
+        <ul class="round round-2">
+            <h1>Losers Round 5</h1>
+            <li class="spacer">&nbsp;</li>
+            <apex:repeat value="{!losersRound5}" var="set">
+                <li class="{!IF(set.Player1Wins__c > set.Player2Wins__c,'game game-top winner','game game-top')}">{!set.Player1__r.Name}<span>{!set.Player1Wins__c}</span></li>
+                <li class="game game-spacer">&nbsp;</li>
+                <li class="{!IF(set.Player2Wins__c > set.Player1Wins__c,'game game-bottom winner','game game-bottom')}">{!set.Player2__r.Name}<span>{!set.Player2Wins__c}</span></li>
+                <li class="spacer">&nbsp;</li>
+            </apex:repeat>
+        </ul>
+    </main>
+</apex:component>

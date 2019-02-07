@@ -28,5 +28,14 @@
         <members>*</members>
         <name>CustomObject</name>
     </types>
+    <types>
+        <members>Player__c-Player Layout</members>
+        <members>Set__c-Set Layout</members>
+        <members>Tournament__c-Tournament Layout</members>
+        <members>Moves__c-Moves Layout</members>
+        <members>Character__c-Character Layout</members>
+        <members>Placement__c-Placement Layout</members>
+        <name>Layout</name>
+    </types>
     <version>38.0</version>
 </Package>

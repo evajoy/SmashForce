@@ -1,16 +1,56 @@
 <apex:page controller="pagesController">
-    <c:headerComponent />
+    <style>
+        .outDiv {
+        position:relative;
+        padding: 10;
+        margin-auto;
+        }
+        .innerDiv {
+        text-align:center;
+        }
+        .startImage{
+        padding: 10px;
+        }
+        .imageDiv {
+        border-color: blue;
+        border-width: 3px;
+        }
+        .startImage:hover {
+        filter: drop-shadow(0 0 0.75rem crimson);
+        opacity: .5;
+        }
+        body {
+        background-color: #f4f1f1;
+        }
+    </style>
     <apex:form >
-        <apex:pageBlock >
-            <apex:pageBlockSection >
-                    
+        <!--<apex:pageBlock id="startImages">
+<apex:pageBlockSection >
+<apex:pageBlockSectionItem dataStyleClass="startImages">
+<apex:commandLink action="{!goToTournaments}">
+<apex:image url="{!$Resource.TournamentsLogo}" width="500" height="500" styleClass="startImage"/> 
+</apex:commandLink>
+<apex:commandLink action="{!goToAllCharacters}">
+<apex:image url="{!$Resource.CharactersLogo}" width="500" height="500" styleClass="startImage"/> 
+</apex:commandLink>
+</apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+</apex:pageBlock>-->
+        <div class="outDiv">
+            
+            <div class="innerDiv">
+                <apex:image url="{!$Resource.SmashForceLogo}" /> <br/>
+                <span class="imageDiv" border="3">
                     <apex:commandLink action="{!goToTournaments}">
-                        <apex:image url="{!$Resource.TournamentsLogo}" width="500" height="500"/> 
+                        <apex:image url="{!$Resource.TournamentsLogo}" width="500" height="500" styleClass="startImage"/> 
                     </apex:commandLink>
+                </span>
+                <span class="imageDiv">
                     <apex:commandLink action="{!goToAllCharacters}">
-                        <apex:image url="{!$Resource.CharactersLogo}" width="500" height="500"/> 
+                        <apex:image url="{!$Resource.CharactersLogo}" width="500" height="500" styleClass="startImage"/> 
                     </apex:commandLink>
-            </apex:pageBlockSection>
-        </apex:pageBlock>
+                </span>
+            </div>
+        </div>
     </apex:form>
 </apex:page>

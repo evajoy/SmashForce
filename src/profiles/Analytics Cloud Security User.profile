@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <classAccesses>
-        <apexClass>CharacterController</apexClass>
+        <apexClass>AllCharactersController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -21,7 +21,15 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>TournamentExtension</apexClass>
+        <apexClass>TournamentController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>TournamentsPageController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>bracketComponentHelper</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -67,6 +75,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Character__c.Style__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Character__c.Times_Played__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -140,8 +153,13 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Player__c.Win_Percentage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
-        <field>Player__c.SecondMostPlayedCharacter__c</field>
+        <field>Set__c.BracketNumber__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -209,6 +227,24 @@
         <field>Tournament__c.Tournament_Date__c</field>
         <readable>false</readable>
     </fieldPermissions>
+    <layoutAssignments>
+        <layout>Character__c-Character Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Moves__c-Moves Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Placement__c-Placement Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Player__c-Player Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Set__c-Set Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Tournament__c-Tournament Layout</layout>
+    </layoutAssignments>
     <pageAccesses>
         <apexPage>AllCharactersPage</apexPage>
         <enabled>false</enabled>
