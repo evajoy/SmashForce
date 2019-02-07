@@ -36,29 +36,51 @@ Displays information related to a specific Character.
 Displays all of the tournaments available to get more information about.
 * **TournamentPage -** <br/>
 Displays all of the information related to a specific Tournament.
+
 ### Controllers
 * **pagesController -** <br/>
-Stores the PageReference functions used by the headerComponent to transfer between the main pages. 
+Stores the pageReference functions for navigating between the main pages.
+  - *PageReference goToTournaments()* Passes back a Page Reference to the Tournaments Page
+  - *PageReference goToAllCharacters()* Passes back a Page Reference to the All Characters Page
+  - *PageReference startPage()* Passes back a Page Reference to the Start Page
 
 * **AllCharactersController -** <br/>
-Stores information related to the characters being displayed on the AllCharactersPage. Also enables the filtering and sorting by Weights, Speeds, Styles, and Most/Least Played. Passes the parameter of the character clicked to the CharacterPageController.
+Stores information related to the characters being displayed on the All Characters Page.<br/>
+  - *List\<SelectOption> getWeights()* Stores the Weight picklist values to filter the Characters<br/>
+  - *List\<SelectOption> getSpeeds()* Stores the Speed picklist values to filter the Characters<br/>
+  - *List\<SelectOption> getStyles()* Stores the Style picklist values to filter the Characters<br/>
+  - *void filterCharacters()* Filters the Characters displayed by the picklist values selected by the User<br/>
+  - *void changePlayed()* Changes the display of the Most/Least Played text<br/>
+  - *PageReference goToCharacterPage()* Passes back a PageReference to the Character Page<br/>
+     * Passes the parameter of the character clicked to the CharacterPageController.
 
 * **CharacterPageController -** <br/>
-Stores information about the character, grabbing data from the database using the ID received from the AllCharactersController. The moves will be grabbed related to the character, then stored in multiple lists. The lists store All of the Moves, Normal Moves, Aerial Moves, Smash Attacks, Specials, Grabs, and Throws to be displayed in tabs on the CharacterPage.
+Stores information about a specific character. 
+  - Grabs data from the database using the ID received from the AllCharactersController.
+  - *void setMoves(List\<Moves__c> allMoves)* Splits all of the moves into individual lists for use in the Tabs on the page.
 
 * **TournamentsPageController -** <br/>
 Stores the information about the tournaments. 
-  - *SortByDate()* allows the user  to click on the Tournament Date column header to sort by the most recent or the last tournament.
+  - *void SortByDate()* allows the user  to click on the Tournament Date column header to sort by the most recent or the last tournament.
 
+* **TournamentController -** <br/>
+Stores information about a specific Tournament selected.
+  - *void sortByRanking()* Sorts the Placements by Rank, Ascending or Descending.
+  - *void sortByOverallRanking()* Sorts the Placement by Overall Rank, Ascending or Descending.
+  - *PageReference backToTournaments()* Returns a PageReference to the All Tournaments page.
+  
 ### Triggers
 * **SetTrigger -** <br/>
-This trigger calls the getMostCharactersPlayed() function after insert, update, or undelete. The IDs of the players is added into a set to preserve uniqueness. This set is passed to the helper function, which will update the players referenced. 
+Runs after insert, update, or undelete of a Set record. 
+  - The IDs of the players is added into a set to preserve uniqueness.
 
 * **PlacementTrigger -** <br/>
-This trigger calls the updatePlacementAverage() function after Insert, Update, Delete, or Undelete. First it will check if the rank on the placement deleted was not null before calling the function on the relevant placements.
+Runs after Insert, Update, Delete, or Undelete of a Placement record. 
+  - Will check if the rank on the placement deleted was not null.
 
 * **PlayerTrigger -** <br/>
-This trigger calls the updateNotablePlayers() function after Insert, Update, or Undelete. It will first make sure the mostPlayedCharacter field on the Player has a name before passing the list of players to the helper function.  
+Runs after Insert, Update, or Undelete. 
+  - Will first make sure the mostPlayedCharacter field on the Player has a name.
 
 ### Components
 * **headerComponent -** <br/>
@@ -68,16 +90,17 @@ Takes in a list of sets as a parameter, displays it visually with conditional cl
 
 ### Extensions / Helpers
 * **SetTriggerHelper -** <br/>
-*getMostCharactersPlayed(Set<Id> playerIds)* Sets the Most Played Character Field on the Player object. <br/>
+*void getMostCharactersPlayed(Set<Id> playerIds)* Sets the Most Played Character Field on the Player object. <br/>
   - This assumes that each set will have two players, and their characters are set.
 
 * **PlacementCalculatorHelper -** <br/>
-*updatePlacementAverage(List<Placement__c> placement)* Sets the Overall Rank field on the Player object. <br/>
+*void updatePlacementAverage(List<Placement__c> placement)* Sets the Overall Rank field on the Player object. <br/>
   - Uses the average of all of the ranks the players have played in to calculate the overall ranking.
  
 * **PlayerTriggerHelper -** <br/>
-*updateNotablePlayers(List<Player__c> playerList>) Sets the Notable Players field on the Character object.* <br/>
+*void updateNotablePlayers(List<Player__c> playerList>) Sets the Notable Players field on the Character object.* <br/>
   - As of right now, this does not remove the name from the Notable Players field on the Character they previously were in. It only adds people to the new field.
+
 
 ### Processes
 * **NumberOfTimesPlayed -** <br/>
