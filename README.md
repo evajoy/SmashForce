@@ -122,3 +122,4 @@ Adds the amount of wins and losses to the Player Object from the Wins & Losses f
 ## Authors
 * Eva Lahtinen
 * Stephen Shekailo
+* David Warner
