@@ -115,10 +115,10 @@ public class AllCharactersController {
     public void changePlayed(){
         if(isPlayed){
             isPlayed = false;
-            mostLeastPlayed = 'Least Played';
+            mostLeastPlayed = 'Most Played';
         } else if(!isPlayed){
             isPlayed = true;
-            mostLeastPlayed = 'Most Played';
+            mostLeastPlayed = 'Least Played';
         }
         filterCharacters();
         
