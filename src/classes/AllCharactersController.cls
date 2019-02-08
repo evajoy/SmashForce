@@ -97,9 +97,15 @@ public class AllCharactersController {
             Characters = [SELECT Character_Image__c, Name FROM Character__c ORDER BY Times_Played__c DESC];
         } else if(Weight != '-' && Speed != '-' && Style == '-' && isPlayed){//6
             Characters = [SELECT Character_Image__c, Name FROM Character__c WHERE Weight__c = :Weight AND Speed__c = :Speed ORDER BY Times_Played__c ASC];
+        } else if(Weight != '-' && Speed != '-' && Style == '-' && !isPlayed){//15
+            Characters = [SELECT Character_Image__c, Name FROM Character__c WHERE Weight__c = :Weight AND Speed__c = :Speed ORDER BY Times_Played__c DESC];
         } else if(Weight == '-' && Speed != '-' && Style != '-' && isPlayed){//7
             Characters = [SELECT Character_Image__c, Name FROM Character__c WHERE Speed__c = :Speed AND Style__c = :Style ORDER BY Times_Played__c ASC];
-        } else if(Weight == '-' && Speed == '-' && Style != '-' && !isPlayed){//8
+        } else if(Weight != '-' && Speed == '-' && Style != '-' && isPlayed){//13
+            Characters = [SELECT Character_Image__c, Name FROM Character__c WHERE Weight__c = :Weight AND Style__c = :Style ORDER BY Times_Played__c ASC];
+        } else if(Weight != '-' && Speed == '-' && Style != '-' && !isPlayed){//14
+            Characters = [SELECT Character_Image__c, Name FROM Character__c WHERE Weight__c = :Weight AND Style__c = :Style ORDER BY Times_Played__c DESC];
+    	}else if(Weight == '-' && Speed == '-' && Style != '-' && !isPlayed){//8
             Characters = [SELECT Character_Image__c, Name FROM Character__c WHERE Style__c = :Style ORDER BY Times_Played__c DESC];
         } else if(Weight != '-' && Speed == '-' && Style == '-' && !isPlayed){//9
             Characters = [SELECT Character_Image__c, Name FROM Character__c WHERE Weight__c = :Weight ORDER BY Times_Played__c DESC];
